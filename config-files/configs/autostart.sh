@@ -21,6 +21,7 @@
 #
 # -----------------------------------------------------------------
 
+lxsession &
 slstatus &
 nitrogen --restore &
 xfce4-power-manager &

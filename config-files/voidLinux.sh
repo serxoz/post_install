@@ -5,7 +5,7 @@
 # | |_| | (_| | |  |   <| | | |  __/\__ \__ \ |__| (_) | (_| |  __/
 # |____/ \__,_|_|  |_|\_\_| |_|\___||___/___/\____\___/ \__,_|\___|
 # -----------------------------------------------------------------
-# https://darkncesscode.com
+# https://darkncesscode.xyz
 # https://github.com/codedarkness
 # -----------------------------------------------------------------
 #
@@ -15,7 +15,7 @@
 # DESCRIPTION: install software and window manager
 #
 #      AUTHOR: DarknessCode
-#       EMAIL: admin@darknesscode.com
+#       EMAIL: achim@darknesscode.xyz
 #
 #     CREATED: 11-07-20 19:04
 #
@@ -65,6 +65,7 @@ install() {
 	ImageMagick
 	alsa-utils
 	lm_sensors
+	lxsensor
 	arandr
 	xarchiver
 	tlp

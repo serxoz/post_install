@@ -5,7 +5,7 @@
 # | |_| | (_| | |  |   <| | | |  __/\__ \__ \ |__| (_) | (_| |  __/
 # |____/ \__,_|_|  |_|\_\_| |_|\___||___/___/\____\___/ \__,_|\___|
 # -----------------------------------------------------------------
-# https://darkncesscode.com
+# https://darkncesscode.xyz
 # https://github.com/codedarkness
 # -----------------------------------------------------------------
 #
@@ -15,7 +15,7 @@
 # DESCRIPTION: install utilities and software in arch based systems
 #
 #      AUTHOR: DarknessCode
-#       EMAIL: admin@darknesscode.com
+#       EMAIL: achim@darknesscode.xyz
 #
 #     CREATED: 07-08-20 10:49
 #
@@ -88,6 +88,7 @@ install() {
 	arandr
 	xarchiver
 	tlp
+	lxsession
 	libx11
 	libxft
 	gcc

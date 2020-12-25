@@ -5,7 +5,7 @@
 # | |_| | (_| | |  |   <| | | |  __/\__ \__ \ |__| (_) | (_| |  __/
 # |____/ \__,_|_|  |_|\_\_| |_|\___||___/___/\____\___/ \__,_|\___|
 # -----------------------------------------------------------------
-# https://darkncesscode.com
+# https://darkncesscode.xyz
 # https://github.com/codedarkness
 # -----------------------------------------------------------------
 #
@@ -15,7 +15,7 @@
 # DESCRIPTION: install utilities and software in debian based systems
 #
 #      AUTHOR: DarknessCode
-#       EMAIL: admin@darknesscode.com
+#       EMAIL: achim@darknesscode.xyz
 #
 #     CREATED: 07-09-20 10:46
 #
@@ -70,6 +70,7 @@ install() {
 	libgtk-3-dev
 	libxdg-basedir-dev
 	libnotify-dev
+	lxsession
 	wget
 	curl
 	apt-transport-https
