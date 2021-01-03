@@ -5,7 +5,7 @@
 # | |_| | (_| | |  |   <| | | |  __/\__ \__ \ |__| (_) | (_| |  __/
 # |____/ \__,_|_|  |_|\_\_| |_|\___||___/___/\____\___/ \__,_|\___|
 # -----------------------------------------------------------------
-# https://darkncesscode.com
+# https://darkncesscode.xyz
 # https://github.com/codedarkness
 # -----------------------------------------------------------------
 #
@@ -15,7 +15,7 @@
 # DESCRIPTION: Launcher most used gui and terminal programs
 #
 #      AUTHOR: DarknessCode
-#       EMAIL: admin@darknesscode.com
+#       EMAIL: achim@darknesscode.xyz
 #
 #     CREATED: 03-27-2020 11:51
 #
@@ -36,6 +36,7 @@ Mutt
 PyRadio
 Ranger
 Telegram
+Thunderbird
 Vim")
 
 choice=$(
@@ -51,6 +52,7 @@ case "$choice" in
 	Sigil) 		 choice=sigil ;;
 	Calibre)	 choice=calibre ;;
 	FileManager) choice=pcmanfm ;;
+	Thunderbird) choice=thunderbird ;;
 	Htop)        exec $terminal -e htop ;;
 	Mutt)	     exec $terminal -e mutt ;;
 	PyRadio)     exec $terminal -e pyradio ;;
@@ -61,4 +63,3 @@ case "$choice" in
 esac
 
 "$choice"
-

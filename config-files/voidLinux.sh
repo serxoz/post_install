@@ -86,7 +86,7 @@ install() {
 	calcurse
 	htop
 	neofetch
-	mplayer
+	mpv
 	w3m
 	w3m-img)
 
@@ -124,6 +124,7 @@ install() {
 	gimp
 	sigil
 	calibre
+	thunderbird
 	libreoffice
 	nitrogen)
 

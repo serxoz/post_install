@@ -4,7 +4,7 @@
 ## | |_| | (_| | |  |   <| | | |  __/\__ \__ \ |__| (_) | (_| |  __/
 ## |____/ \__,_|_|  |_|\_\_| |_|\___||___/___/\____\___/ \__,_|\___|
 ## -----------------------------------------------------------------
-## https://darkncesscode.com
+## https://darkncesscode.xyz
 ## https://github.com/codedarkness
 ## ---------------------------------------------------------------*/
 
@@ -81,40 +81,40 @@ static const char *upvol[]	 = { "amixer", "-q", "set", "Master", "5%+", "unmute"
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	/* modifier                     key        function        	argument */
+	{ MODKEY,                       XK_Return, spawn,          	{.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          	{.v = dmenucmd } },
+	{ MODKEY,                       XK_q,      killclient,     	{0} },
+	{ MODKEY|ShiftMask,             XK_x,      quit,           	{0} },
+	{ MODKEY,                       XK_b,      togglebar,      	{0} },
+	{ MODKEY,                       XK_j,      focusstack,     	{.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,     	{.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    	{.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    	{.i = -1 } },
+	{ MODKEY,                       XK_i,      incnmaster,     	{.i = +1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     	{.i = -1 } },
+	{ MODKEY,                       XK_h,      setmfact,       	{.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       	{.f = +0.05} },
+	{ MODKEY,                       XK_Tab,    view,           	{0} },
+	{ MODKEY,                       XK_space,  setlayout,      	{0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating, 	{0} },
+	{ MODKEY|ShiftMask,             XK_0,      view,           	{.ui = ~0 } },
+	{ MODKEY,                       XK_comma,  focusmon,       	{.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,       	{.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         	{.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         	{.i = +1 } },
 
 	/* Keybindings */
-	{ MODKEY,           XK_F2,     spawn,      SHCMD("brave") },
-	{ MODKEY,           XK_F3,     spawn,      SHCMD("pcmanfm") },
-	{ MODKEY,           XK_F12,    spawn,      SHCMD("blurlock") },
+	{ MODKEY,           			XK_F2,     spawn,      		SHCMD("brave") },
+	{ MODKEY,           			XK_F3,     spawn,      		SHCMD("pcmanfm") },
+	{ MODKEY,           			XK_F12,    spawn,      		SHCMD("blurlock") },
 
-	{ MODKEY,           XK_w,      spawn,      SHCMD("brave") },
+	{ MODKEY,           			XK_w,      spawn,      		SHCMD("brave") },
 
-	{ MODKEY,           XK_0,      spawn,      SHCMD("./.dwm/sysact.sh") },
-	{ MODKEY,           XK_o,      spawn,      SHCMD("./.dwm/dmenu-programs.sh") },
+	{ MODKEY,           			XK_0,      spawn,      		SHCMD("./.dwm/sysact.sh") },
+	{ MODKEY,           			XK_o,      spawn,      		SHCMD("./.dwm/dmenu-programs.sh") },
 
-	{ 0,                            XK_Print,  spawn,          SHCMD("dc-scrot -d") },
+	{ 0,                            XK_Print,  spawn,          	SHCMD("dc-scrot -d") },
 
 	/* volume keys */
 	{ 0,                 XF86XK_AudioMute,     spawn,          {.v = mutevol } },

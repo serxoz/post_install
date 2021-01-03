@@ -108,6 +108,7 @@ install() {
 	htop
 	neofetch
 	mplayer
+	mpv
 	w3m)
 
 	sudo pacman -S --noconfirm --needed "${PKGS[@]}" &&
