@@ -2,4 +2,9 @@
 # ~/.bash_profile
 #
 
+export EDITOR="vim"
+export TERMINAL="urxvt"
+export BROWUSER="linkhandler"
+export TRUEBROWSER="brave"
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc

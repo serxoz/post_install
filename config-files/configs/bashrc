@@ -4,6 +4,10 @@
 
 [[ $- != *i* ]] && return
 
+set -o vi
+bind ^l:clear-screen
+shopt -s autocd
+
 colors() {
 	local fgc bgc vals seq0
 
