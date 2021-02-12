@@ -96,7 +96,7 @@ install() {
 	ranger
 	calcurse
 	htop
-	mplayer
+	mpv
 	w3m
 	w3m-img)
 
@@ -128,12 +128,24 @@ install() {
 	mousepad
 	xfce4-power-manager
 	xfce4-appfinder
+	thunderbird
 	pcmanfm
 	nitrogen)
 
 	sudo apt install -y "${PKGS[@]}" &&
 	echo " GUI Applications Successfully installed" || echo " Something is not right!!!"
 	echo ""
+
+	while true; do
+		read -p " Install Surf web browser [y - n] : " yn
+		case $yn in
+			[Yy]* )
+				sudo apt install -y surf ;;
+			[Nn]* )
+				break ;;
+			* ) echo "Please answer yes or no." ;;
+		esac
+	done
 
 	while true; do
 		read -p " Install Brave Web Browser [y - n] : " yn
@@ -143,7 +155,7 @@ install() {
 				curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - &&
 				echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list &&
 				sudo apt update &&
-				sudo apt install brave-browser &&
+				sudo apt install -y brave-browser &&
 				echo " Brave browser has been installed" || echo " We have a problem in the Matrix!!!" ; break ;;
 			[Nn]* )
 				break ;;
@@ -156,7 +168,7 @@ install() {
 		read -p " Install Firefox [y - n] : " yn
 		case $yn in
 			[Yy]* )
-				sudo apt install firefox-esr &&
+				sudo apt install -y firefox-esr &&
 				echo " Firefox has been installed" || echo " Not Again!!!!" ; break ;;
 			[Nn]* )
 				break ;;
@@ -169,16 +181,15 @@ install() {
 	clear
 	echo " ##### INSTALLING SUCKLESS SOFTWARE #####"
 	echo ""
-	echo " Installing dwm"
 	sleep 2
 
 	cd config-files/systems/dwm/
 	sudo make clean install
 	cd ../../..
 
-	clear
 	echo ""
-	echo " Installing dmenu"
+	echo ""
+	echo " ### Installing dmenu ###"
 	echo ""
 	sleep 2
 
@@ -186,9 +197,9 @@ install() {
 	sudo make clean install
 	cd ../../..
 
-	clear
 	echo ""
-	echo " Installing slstatus, status bar for dwm"
+	echo ""
+	echo " ### Installing slstatus, status bar for dwm ###"
 	echo ""
 	sleep 2
 
@@ -196,6 +207,21 @@ install() {
 	sudo make clean install
 	cd ../../..
 	sleep 2
+
+	echo ""
+	echo ""
+	echo " ### Installing simple terminal st ###"
+	echo " ### This is the built from Luke Smith ###"
+	echo ""
+	sleep 2
+
+	cd config-files/systems/st
+	sudo make clean install
+	cd ../../..
+	sleep 2
+
+	echo ""
+	echo ""
 
 	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
 	echo " dwm.desktop entry has been copied" || echo " I dunno what happend!!"

@@ -23,6 +23,13 @@ This is the script i use in my post installation. I use it for this *Linux Distr
 
 In this script **dwm** is my default tiling window manager to install. (you can comment out or delete the lines that install dwm if you don't want to install it)
 
+This is the suckless software that will be install
+
+* dwm
+* dmenu
+* slstatus
+* st
+
 ## Process
 
 This script will install all you need to start with a new Linux system. Some distros need more software than other ones.
@@ -39,6 +46,7 @@ Here is a brief list of the software that will install:
 	* Libreries and all that stuffs
 * CLI Programs
 	* rxvt-unicode (i like this terminal)
+	* st (i like this one as well)
 	* ranger
 	* vim
 	* neofetch

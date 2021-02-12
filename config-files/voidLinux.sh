@@ -79,8 +79,8 @@ install() {
    	libnotify
 	Adapta
 	papirus-icon-theme
-	j4-dmenu-desktop
 	rxvt-unicode
+	herfbuzz-devel
 	vim-huge
 	ranger
 	calcurse
@@ -133,10 +133,22 @@ install() {
 	echo ""
 
 	while true; do
+		read -p " Install Surf web browser [y - n] : " yn
+		case $yn in
+			[Yy]* )
+				sudo xbps-install -S surf ;;
+			[Nn]* )
+				break ;;
+			* ) echo "Please answer yes or no." ;;
+		esac
+	done
+
+
+	while true; do
 		read -p " Install Chromium [y - n] : " yn
 		case $yn in
 			[Yy]* )
-				sudo xbps-install chromium &&
+				sudo xbps-install -S chromium &&
 				echo " Chromium has been installed" || echo " We have a problem in the Matrix!!!" ; break ;;
 			[Nn]* )
 				break ;;
@@ -149,7 +161,7 @@ install() {
 		read -p " Install Firefox [y - n] : " yn
 		case $yn in
 			[Yy]* )
-				sudo xbps-install firefox &&
+				sudo xbps-install -S firefox &&
 				echo " Firefox has been installed" || echo " Not Again!!!!" ; break ;;
 			[Nn]* )
 				break ;;
@@ -168,7 +180,7 @@ install() {
 	sudo make clean install
 	cd ../../..
 
-	clear
+	echo ""
 	echo ""
 	echo " ### Installing dmenu ###"
 	echo ""
@@ -178,7 +190,7 @@ install() {
 	sudo make clean install
 	cd ../../..
 
-	clear
+	echo ""
 	echo ""
 	echo " ### Installing slstatus, status bar for dwm ###"
 	echo ""
@@ -188,6 +200,21 @@ install() {
 	sudo make clean install
 	cd ../../..
 	sleep 2
+
+	echo ""
+	echo ""
+	echo " ### Installing simple terminal st ###"
+	echo " ### This is the built from Luke Smith ###"
+	echo ""
+	sleep 2
+
+	cd config-files/systems/st
+	sudo make clean install
+	cd ../../..
+	sleep 2
+
+	echo ""
+	echo ""
 
 	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
 	echo " dwm.desktop entry has been copied" || echo " I dunno what happend!!"

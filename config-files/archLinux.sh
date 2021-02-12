@@ -107,7 +107,6 @@ install() {
 	calcurse
 	htop
 	neofetch
-	mplayer
 	mpv
 	w3m)
 
@@ -205,14 +204,13 @@ install() {
 	clear
 	echo " ##### INSTALLING SUCKLESS SOFTWARE #####"
 	echo ""
-	echo " ### Installing dwm ###"
 	sleep 2
 
 	cd config-files/systems/dwm/
 	sudo make clean install
 	cd ../../..
 
-	clear
+	echo ""
 	echo ""
 	echo " ### Installing dmenu ###"
 	echo ""
@@ -222,7 +220,7 @@ install() {
 	sudo make clean install
 	cd ../../..
 
-	clear
+	echo ""
 	echo ""
 	echo " ### Installing slstatus, status bar for dwm ###"
 	echo ""
@@ -232,6 +230,25 @@ install() {
 	sudo make clean install
 	cd ../../..
 	sleep 2
+
+	echo ""
+	echo ""
+	echo " ### Installing simple terminal st ###"
+	echo " ### This is the built from Luke Smith ###"
+	echo ""
+	sleep 2
+
+	cd config-files/systems/st
+	sudo make clean install
+	cd ../../..
+	sleep 2
+
+	echo ""
+	echo ""
+
+	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
+	echo " dwm.desktop entry has been copied" || echo " I dunno what happend!!"
+	echo ""
 
 	## xsessions directory
 	### Check for dir, if not found create it using the mkdir ###
