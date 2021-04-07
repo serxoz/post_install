@@ -65,22 +65,26 @@ install() {
 	ImageMagick
 	alsa-utils
 	lm_sensors
-	lxsensor
 	arandr
 	xarchiver
+	udevil
 	tlp
 	libX11-devel
 	libXft-devel
+	pkg-config
 	gcc
 	make
 	libXinerama-devel
+	libxfce4ui-devel
+	polkit-devel
+	xfce-polkit
 	gtk-engine-murrine
 	dunst
    	libnotify
 	Adapta
 	papirus-icon-theme
 	rxvt-unicode
-	herfbuzz-devel
+	harfbuzz-devel
 	vim-huge
 	ranger
 	calcurse
@@ -124,7 +128,6 @@ install() {
 	gimp
 	sigil
 	calibre
-	thunderbird
 	libreoffice
 	nitrogen)
 
@@ -142,7 +145,6 @@ install() {
 			* ) echo "Please answer yes or no." ;;
 		esac
 	done
-
 
 	while true; do
 		read -p " Install Chromium [y - n] : " yn
@@ -269,7 +271,7 @@ install() {
 	echo ""
 
 	echo " Cloning and installing Dracula icons"
-	git clone git://git.darknesscode.com/draculaicons.git &&
+	git clone git://git.darknesscode.xyz/draculaicons &&
 	sudo mv draculaicons /user/share/icons/Dracula &&
 	sudo chmod +x -R /usr/share/icons/Dracula &&
 	echo " Dracula icons has been installed" || echo " Another problem!!!"
@@ -352,7 +354,6 @@ install() {
 	echo " xsessions directory was created" || echo " xsessions directory already exist"
 	echo ""
 	sleep 5
-
 
 	clear
 	echo ""
