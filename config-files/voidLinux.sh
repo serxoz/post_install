@@ -78,6 +78,9 @@ install() {
 	libxfce4ui-devel
 	polkit-devel
 	xfce-polkit
+	intltool
+	libnotify-devel
+	upower-devel
 	gtk-engine-murrine
 	dunst
    	libnotify
@@ -272,7 +275,7 @@ install() {
 
 	echo " Cloning and installing Dracula icons"
 	git clone git://git.darknesscode.xyz/draculaicons &&
-	sudo mv draculaicons /user/share/icons/Dracula &&
+	sudo mv draculaicons /usr/share/icons/Dracula &&
 	sudo chmod +x -R /usr/share/icons/Dracula &&
 	echo " Dracula icons has been installed" || echo " Another problem!!!"
 	echo ""
