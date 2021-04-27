@@ -105,6 +105,7 @@ install() {
 	vim
 	ranger
 	calcurse
+	amfora
 	htop
 	neofetch
 	mpv
@@ -244,10 +245,6 @@ install() {
 	sleep 2
 
 	echo ""
-	echo ""
-
-	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
-	echo " dwm.desktop entry has been copied" || echo " I dunno what happend!!"
 	echo ""
 
 	## xsessions directory
