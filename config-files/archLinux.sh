@@ -103,6 +103,7 @@ install() {
 	ttf-dejavu
    	noto-fonts
 	vim
+	amfora
 	ranger
 	calcurse
 	htop
@@ -151,6 +152,7 @@ install() {
 	pcmanfm
 	epdfview
 	sxiv
+	gimp
 	sigil
 	calibre
 	libreoffice-fresh
@@ -243,11 +245,6 @@ install() {
 	cd ../../..
 	sleep 2
 
-	echo ""
-	echo ""
-
-	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
-	echo " dwm.desktop entry has been copied" || echo " I dunno what happend!!"
 	echo ""
 
 	## xsessions directory

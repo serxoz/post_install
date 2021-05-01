@@ -221,6 +221,12 @@ install() {
 	sleep 2
 
 	echo ""
+
+	## xsessions directory
+	### Check for dir, if not found create it using the mkdir ###
+	xsessions="/usr/share/xsessions"
+	[ ! -d "$xsessions" ] && sudo mkdir -p "$xsessions" &&
+	echo " xsessions directory was created" || echo " $xsessions already exist!"
 	echo ""
 
 	sudo cp config-files/configs/dwm.desktop /usr/share/xsessions/dwm.desktop &&
