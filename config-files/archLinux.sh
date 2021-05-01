@@ -106,6 +106,7 @@ install() {
 	amfora
 	ranger
 	calcurse
+	amfora
 	htop
 	neofetch
 	mpv
