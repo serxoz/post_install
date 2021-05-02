@@ -75,7 +75,6 @@ install() {
 	curl
 	apt-transport-https
 	scrot
-	j4-dmenu-desktop
 	xautolock
 	i3lock
 	imagemagick
@@ -256,6 +255,10 @@ install() {
 
 	cp -af config-files/configs/bash_profile $HOME/.bash_profile &&
 	echo " New Bash Profile file has been copied" || echo " Againnnn!!!"
+	echo ""
+
+	cp -ar config-files/configs/nmcli/ $HOME/.dwm/ &&
+	echo " networkmanager demnu has been copied" || echo " We have a problem again!!!"
 	echo ""
 	sleep 5
 

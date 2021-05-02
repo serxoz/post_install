@@ -65,3 +65,7 @@ Here is a brief list of the software that will install:
 	* firefox
 
 Before you use the script, take a well look of it and change what ever you want to match your necesities for your own build.
+
+### Note
+
+Added [NetworkManager-dmenu](https://github.com/firecat53/networkmanager-dmenu) From Firecat53 repo.

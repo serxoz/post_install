@@ -85,6 +85,7 @@ install() {
 	alsa-utils
 	lm_sensors
 	networkmanager
+	rsync
 	arandr
 	xarchiver
 	tlp
@@ -280,6 +281,10 @@ install() {
 
 	cp -af config-files/configs/autostart_blocking.sh $HOME/.dwm/ &&
 	echo " system autostart_blocking files has been copied" || echo " We have a problem again!!!"
+	echo ""
+
+	cp -ar config-files/configs/nmcli/ $HOME/.dwm/ &&
+	echo " networkmanager demnu has been copied" || echo " We have a problem again!!!"
 	echo ""
 	sleep 5
 
