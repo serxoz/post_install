@@ -88,8 +88,12 @@ install() {
 	rsync
 	arandr
 	xarchiver
+	zip
+	unzip
 	tlp
-	lxsession
+	polkit
+	polkit-gnome
+	gnome-keyring
 	libx11
 	libxft
 	gcc
