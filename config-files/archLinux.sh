@@ -327,13 +327,6 @@ install() {
 	echo " Dracula gtk theme has been installed" || echo " No way!!!!"
 	echo ""
 
-	echo " Cloning and installing Dracula icons"
-	git clone git://git.darknesscode.xyz/draculaicons &&
-	sudo mv draculaicons /usr/share/icons/Dracula &&
-	sudo chmod +x -R /usr/share/icons/Dracula &&
-	echo " Dracula icons has been installed" || echo " Another problem!!!"
-	echo ""
-
 	## dunst directory
 	### Check for dir, if not found create it using the mkdir ###
 	dundir="$HOME/.config/dunst"

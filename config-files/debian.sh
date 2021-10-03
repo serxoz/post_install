@@ -71,6 +71,8 @@ install() {
 	libxdg-basedir-dev
 	libnotify-dev
 	lxsession
+	gcc
+	make
 	wget
 	curl
 	apt-transport-https
@@ -82,10 +84,10 @@ install() {
 	build-essential
 	xautolock
 	lm-sensors
-	volumeicon-alsa
 	network-manager
-	pk-update-icon
 	xarchiver
+	zip
+	unzip
 	tlp
 	dunst
    	libnotify-bin
@@ -111,6 +113,7 @@ install() {
 
 	sed -i 's/set preview_images false/set preview_images true/g' $HOME/.config/ranger/rc.conf &&
 	echo " Preview images activated" || echo " Upsss!!!"
+
 	echo ""
 
 	sed -i 's/set draw_borders none/set draw_borders both/g' $HOME/.config/ranger/rc.conf &&
@@ -146,6 +149,8 @@ install() {
 		esac
 	done
 
+	echo ""
+
 	while true; do
 		read -p " Install Brave Web Browser [y - n] : " yn
 		case $yn in
@@ -161,6 +166,7 @@ install() {
 			* ) echo " Please answer yes or no." ;;
 		esac
 	done
+
 	echo ""
 
 	while true; do
@@ -298,13 +304,6 @@ install() {
 	sudo mv gtk /usr/share/themes/Dracula &&
 	sudo chmod +x -R /usr/share/themes/Dracula &&
 	echo " Dracula gtk theme has been installed" || echo " No way!!!!"
-	echo ""
-
-	echo " Cloning and installing Dracula icons"
-	git clone git://git.darknesscode.xyz/draculaicons &&
-	sudo mv draculaicons /user/share/icons/Dracula &&
-	sudo chmod +x -R /usr/share/icons/Dracula &&
-	echo " Dracula icons has been installed" || echo " Another problem!!!"
 	echo ""
 
 	## Desktop directory
