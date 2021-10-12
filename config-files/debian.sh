@@ -70,7 +70,8 @@ install() {
 	libgtk-3-dev
 	libxdg-basedir-dev
 	libnotify-dev
-	lxsession
+	policykit
+	policykit-1-gnome
 	gcc
 	make
 	wget

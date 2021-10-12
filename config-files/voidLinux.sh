@@ -76,8 +76,8 @@ install() {
 	make
 	libXinerama-devel
 	libxfce4ui-devel
-	polkit-devel
-	xfce-polkit
+	polkit
+	polkit-gnome
 	intltool
 	libnotify-devel
 	upower-devel
