@@ -70,7 +70,7 @@ install() {
 	libgtk-3-dev
 	libxdg-basedir-dev
 	libnotify-dev
-	policykit
+	policykit-1
 	policykit-1-gnome
 	gcc
 	make
