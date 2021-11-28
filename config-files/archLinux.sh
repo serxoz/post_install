@@ -48,26 +48,6 @@ install() {
 	echo " xorg and lightdm successfully installed"
 	echo ""
 
-	#lightdm-slick-greeter
-	git clone https://aur.archlinux.org/lightdm-slick-greeter.git
-	cd lightdm-slick-greeter
-	makepkg -sri
-	cd ..
-	sudo rm -r lightdm-slick-greeter
-	echo ""
-
-	sudo cp -af config-files/configs/slick-greeter.conf /etc/lightdm/ &&
-	echo " New slick greeter has been copied" || echo " Upss!!!!"
-	echo ""
-	sleep 2
-
-	sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf &&
-	sudo sed -i 's/#user-session=default/user-session=dwm/g' /etc/lightdm/lightdm.conf &&
-	echo " Lightdm setup is done!!" || echo " Something is happening!!!"
-
-	sudo systemctl enable lightdm -f
-	echo " Lightdm was enabled"
-	echo ""
 	sleep 5
 
 	clear
@@ -92,8 +72,7 @@ install() {
 	unzip
 	tlp
 	polkit
-	polkit-gnome
-	gnome-keyring
+	lxsession
 	libx11
 	libxft
 	gcc
@@ -108,11 +87,12 @@ install() {
 	ttf-dejavu
    	noto-fonts
 	vim
+	neomutt
 	amfora
 	ranger
 	calcurse
 	amfora
-	htop
+	bpytop
 	neofetch
 	mpv
 	w3m)
@@ -131,20 +111,6 @@ install() {
 	echo ""
 	sleep 2
 
-	echo " Setting up Rangen File Manager"
-	echo ""
-	sleep 2
-
-	ranger --copy-config=all
-
-	sed -i 's/set preview_images false/set preview_images true/g' $HOME/.config/ranger/rc.conf &&
-	echo " Preview images activated" || echo " Upsss!!!"
-	echo ""
-
-	sed -i 's/set draw_borders none/set draw_borders both/g' $HOME/.config/ranger/rc.conf &&
-	echo " Draw borders activated" || echo  " Not Againg!!!"
-	echo ""
-
 	clear
 	echo ""
 	echo " ##### GUI APPLICATIONS #####"
@@ -159,7 +125,6 @@ install() {
 	epdfview
 	sxiv
 	gimp
-	sigil
 	calibre
 	libreoffice-fresh
 	nitrogen)
@@ -207,10 +172,30 @@ install() {
 				echo " Please answer yes or no." ;;
 		esac
 	done
+	echo ""
+
+	while true; do
+		read -p " Install Qutebrowser [y - n] : " yn
+		case $yn in
+			[Yy]* )
+				sudo pacman -S --noconfirm qutebrowser &&
+				echo " Firefox has been installed" || echo " Not Again!!!!" ; break ;;
+			[Nn]* )
+				break ;;
+			* )
+				echo " Please answer yes or no." ;;
+		esac
+	done
 	sleep 5
 
 	clear
 	echo " ##### INSTALLING SUCKLESS SOFTWARE #####"
+	echo ""
+	sleep 2
+
+	echo ""
+	echo ""
+	echo " ### Installing dwm ###"
 	echo ""
 	sleep 2
 
@@ -291,6 +276,72 @@ install() {
 	echo " networkmanager demnu has been copied" || echo " We have a problem again!!!"
 	echo ""
 	sleep 5
+
+	clear
+	echo ""
+	echo " ##### LIGHTDM AND LIGHTDM-MINI-GREETER CONFIGURATION #####"
+	echo ""
+	sleep 2
+
+	while true; do
+		read -p " Install lightdm-mini-greeter : " yn
+		case $yn in
+			[Yy]* )
+				echo ""
+				yay -S lightdm-mini-greeter
+				echo ""
+				read -p " Which is your user name : " choice;
+				sudo sed -i 's/user = CHANGE_ME/user = '$choice'/g' /etc/lightdm/lightdm-mini-greeter.conf &&
+				echo " User added to lightdm-mini-greeter" || echo " No way!!!!"
+				echo ""
+
+				sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf &&
+				sudo sed -i 's/#user-session=default/user-session=dwm/g' /etc/lightdm/lightdm.conf &&
+				echo " Lightdm setup is done!!" || echo " Something is happening!!!"
+
+				sudo systemctl enable lightdm -f
+				echo " Lightdm was enabled"
+				echo ""
+				break ;;
+			[Nn]* )
+				break ;;
+			* ) echo "Please answer yes or no." ;;
+		esac
+	done
+	echo ""
+
+	while true; do
+		read -p " Install lightdm-slick-greeter : " yn
+		case $yn in
+			[Yy]* )
+				#lightdm-slick-greeter
+				git clone https://aur.archlinux.org/lightdm-slick-greeter.git
+				cd lightdm-slick-greeter
+				makepkg -sri
+				cd ..
+				sudo rm -r lightdm-slick-greeter
+				echo ""
+
+				sudo cp -af config-files/configs/slick-greeter.conf /etc/lightdm/ &&
+				echo " New slick greeter has been copied" || echo " Upss!!!!"
+				echo ""
+				sleep 2
+
+				sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf &&
+				sudo sed -i 's/#user-session=default/user-session=dwm/g' /etc/lightdm/lightdm.conf &&
+				echo " Lightdm setup is done!!" || echo " Something is happening!!!"
+
+				sudo systemctl enable lightdm -f
+				echo " Lightdm was enabled"
+				echo ""
+				break ;;
+			[Nn]* )
+				break ;;
+			* ) echo "Please answer yes or no." ;;
+		esac
+	done
+	echo ""
+	sleep 2
 
 	clear
 	echo " ##### NEW DIRECTORIES AND CONFIG FILES ####"

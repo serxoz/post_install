@@ -77,7 +77,7 @@ install() {
 	libXinerama-devel
 	libxfce4ui-devel
 	polkit
-	polkit-gnome
+	lxsession
 	intltool
 	libnotify-devel
 	upower-devel
@@ -89,10 +89,11 @@ install() {
 	rxvt-unicode
 	harfbuzz-devel
 	vim-huge
+	neomutt
 	amfora
 	ranger
 	calcurse
-	htop
+	bpytop
 	neofetch
 	mpv
 	w3m
@@ -130,7 +131,6 @@ install() {
 	epdfview
 	sxiv
 	gimp
-	sigil
 	calibre
 	libreoffice
 	nitrogen)
@@ -168,6 +168,20 @@ install() {
 		case $yn in
 			[Yy]* )
 				sudo xbps-install -S firefox &&
+				echo " Firefox has been installed" || echo " Not Again!!!!" ; break ;;
+			[Nn]* )
+				break ;;
+			* )
+				echo " Please answer yes or no." ;;
+		esac
+	done
+	echo ""
+
+	while true; do
+		read -p " Install Qutebrowser [y - n] : " yn
+		case $yn in
+			[Yy]* )
+				sudo xbps-install -S qutebrowser &&
 				echo " Firefox has been installed" || echo " Not Again!!!!" ; break ;;
 			[Nn]* )
 				break ;;

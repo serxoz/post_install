@@ -40,7 +40,7 @@ Here is a brief list of the software that will install:
 	* xorg-server
 	* xorg-fonts
 	* lightdm
-	* lightdm-mini-greeter (**Void Linux**)
+	* lightdm-mini-greeter (**Arch Linux**, **Void Linux**)
 	* slick-greeter (**Arch Linux**, **Debian**)
 * System Utilities
 	* Libreries and all that stuffs
@@ -55,11 +55,10 @@ Here is a brief list of the software that will install:
 	* nitrogen
 	* xfce4-appfinder
 	* xfce4-porwer-manager
-	* pcmanfm (that is what i like)
+	* pcmanfm (that's what i like)
 	* nousepad
 	* gimp
 	* calibre
-	* sigil
 	* brave (**Arch Linux** and **Debian**)
 	* chromium
 	* firefox

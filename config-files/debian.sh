@@ -106,21 +106,6 @@ install() {
 	echo " Everything looks good so far" || echo " Something goes wrong!"
 	echo ""
 
-	echo " Setting up Rangen File Manager"
-	echo ""
-	sleep 2
-
-	ranger --copy-config=all
-
-	sed -i 's/set preview_images false/set preview_images true/g' $HOME/.config/ranger/rc.conf &&
-	echo " Preview images activated" || echo " Upsss!!!"
-
-	echo ""
-
-	sed -i 's/set draw_borders none/set draw_borders both/g' $HOME/.config/ranger/rc.conf &&
-	echo " Draw borders activated" || echo  " Not Againg!!!"
-	sleep 5
-
 	clear
 	echo ""
 	echo " ##### GUI APPLICATIONS #####"
@@ -186,6 +171,12 @@ install() {
 
 	clear
 	echo " ##### INSTALLING SUCKLESS SOFTWARE #####"
+	echo ""
+	sleep 2
+
+	echo ""
+	echo ""
+	echo " ### Installing dwm ###"
 	echo ""
 	sleep 2
 
